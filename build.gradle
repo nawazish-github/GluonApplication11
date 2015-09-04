@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.javafxports:jfxmobile-plugin:1.0.0-b9'
+    }
+}
+
+apply plugin: 'org.javafxports.jfxmobile'
+
+repositories {
+    jcenter()
+}
+
+mainClassName = 'com.gluonapplication11.GluonApplication11'
+
+jfxmobile {
+    android {
+        manifest = 'src/android/AndroidManifest.xml'
+        androidSdk = 'C:/Program Files (x86)/Android/android-sdk' //i added this line
+
+    }
+    ios {
+        infoPList = file('src/ios/Default-Info.plist')
+    }
+}
+
